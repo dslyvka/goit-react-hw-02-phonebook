@@ -4,7 +4,7 @@ import Filter from './components/Filter/Filter';
 
 import Form from './components/Form/Form';
 import Contacts from './components/Contacts/Contacts';
-import {SectionStyled} from './components/Contacts/SectionContacts.styled'
+import { SectionStyled } from './components/Contacts/SectionContacts.styled';
 
 class App extends Component {
   state = {
@@ -26,8 +26,10 @@ class App extends Component {
 
     if (e.target.checkValidity()) {
       if (
-        this.state.contacts.find(contact =>
-          contact.name.toLowerCase().includes(name),
+        this.state.contacts.find(
+          contact =>
+            contact.name.toLowerCase().includes(name) &&
+            contact.name.toLowerCase().includes(name).length === name.length,
         )
       ) {
         alert(`${name} is already in contacts`);
