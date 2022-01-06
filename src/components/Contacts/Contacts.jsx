@@ -11,7 +11,7 @@ function Contacts({ contacts, deleteContact }) {
             <li key={id}>
               <p>
                 {name}: {number}
-                <button id={id} onClick={deleteContact}>delete</button>
+                <button id={id} onClick={() => deleteContact(id)}>delete</button>
               </p>
             </li>
           );

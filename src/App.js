@@ -55,10 +55,10 @@ class App extends Component {
     return filteredContacts;
   };
 
-  deleteContact = e => {
-    const toDelete = e.currentTarget.id;
+  deleteContact = id => {
+    
     let contacts = this.state.contacts.filter(
-      contact => contact.id !== toDelete,
+      contact => contact.id !== id,
     );
     this.setState({ contacts: [...contacts] });
   };
